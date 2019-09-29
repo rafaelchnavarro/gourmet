@@ -13,7 +13,7 @@ import javax.swing.JFrame;
 
 public class Main extends JFrame {
     private static final long serialVersionUID = -1195617528474947903L;
-    private No rootNode;
+    private Noh rootNode;
 
     public static void main(final String[] args) {
         Main main = new Main();
@@ -36,15 +36,15 @@ public class Main extends JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
 
-        final NoFinal endNodeSim = new NoFinal(this);
+        final NohFinal endNodeSim = new NohFinal(this);
         endNodeSim.setPrato("Lasanha");
 
-        final NoFinal noNode = new NoFinal(this);
+        final NohFinal noNode = new NohFinal(this);
         noNode.setPrato("Bolo de Chocolate");
 
-        (this.rootNode = new No((JFrame) this)).setQuestion("O prato que você pensou é massa?");
-        this.rootNode.setYes((No) endNodeSim);
-        this.rootNode.setNo((No) noNode);
+        (this.rootNode = new Noh((JFrame) this)).setPergunta("O prato que você pensou é massa?");
+        this.rootNode.setSimNoh((Noh) endNodeSim);
+        this.rootNode.setNaoNoh((Noh) noNode);
     }
 
     public JPanel criarPainel(){
